@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Category</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    
+    <!--Main Content-->
+    <div class="my-5">
+      <div class="mx-auto w-25 " style="max-width:100%;">
+        <h2 class="text-center mb-3">Update produit</h2>
+        <form  [formGroup]="form" (ngSubmit)="submit()" >
+
+          <!--Nom-->
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="nom" class="form-label">Nom</label>
+              <input id="nom" formControlName="nom" type="text" name="nom" class="form-control" placeholder="Nom" required>
+            </div>
+          </div>
+
+          
+          <!--Qt-->
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="qt" class="form-label">Quantité</label>
+              <input id="qt" type="number" formControlName="qt" name="qt"class="form-control" placeholder="Quantité" required>
+            </div>
+          </div>
+
+            <!--disponible-->
+            <div class="row">
+                <div class="col-md-12 form-group mb-3">
+                  <label for="disponible" class="form-label">Disponible</label>
+                  <input id="disponible" type="checkbox" formControlName="disponible" name="disponible"class="form-control" placeholder="disponible" required>
+                </div>
+              </div>
+            
+          <!--Datecreation-->
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="datecreation" class="form-label">Date de Création</label>
+              <input id="datecreation" formControlName="datecreation" type="datetime-local" name="datecreation"  class="form-control" required>
+            </div>
+          </div>
+         
+          <!--Datemodification-->
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="datemodification" class="form-label">Date de Modification</label>
+              <input id="datemodification" formControlName="datemodification" type="datetime-local" name="datemodification" class="form-control" required>
+              </div>
+          </div>
+
+           <!--categorieId-->
+          
+          
+              <!--Submit-->
+      <div class="form-group text-center">
+        <button class="btn btn-primary w-100" [disabled]="!form.valid"   type="submit" value="Submit">Update</button>
+        <a class="btn btn-danger" href="/">Cancel</a>
+      </div>
+
+    </form>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Users</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/produit">Go to Liste de produits</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+    <!--Main Content-->
+    <div class="mt-5">
+        <h1 class="text-center">Liste De Categories</h1>
+        <div class="container">
+            <!--Add User Button-->
+            <div class="my-3">
+                <a href="/addC"><button type="button" class="btn btn-primary">Add Categories</button></a>
+            </div>
+            <div>
+              <input type="text" [(ngModel)]="searchTerm" placeholder="Search categories">
+              <button (click)="search()">Search</button>
+            </div>
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+      
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Nom </th>
+              <th scope="col">Quantite</th>
+              <th scope="col">Date creation</th>
+              <th scope="col">date modification</th>
+              <th scope="col">Action</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr *ngFor="let categorie of categories" (click)="showProduits(categorie.id)">
+              
+                <td>{{ categorie.id }}</td>
+                <td>{{ categorie.nom }}</td>
+                <td>{{ categorie.qt }}</td>
+                <td>{{ categorie.datecreation | date:'dd/MM/yyyy' }}</td>
+                <td>{{ categorie.datemodification | date:'dd/MM/yyyy' }}</td>
+
+
+                
+                <td>
+                  <button type="button" class="btn btn-warning" (click)="updateCategorie(categorie.id)" >Update</button>    
+                  <button type="button" class="btn btn-danger" (click)="deleteCategories(categorie.id)" onclick="window.location.reload();">DELETE</button>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  
+
+     
+
+     
+
+

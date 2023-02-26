@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Users</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Go to Liste de categorie</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+        </div>
+      </nav>
+    <!--Main Content-->
+    <div class="mt-5">
+        <h1 class="text-center">Liste De Produit</h1>
+        <div class="container">
+            <!--Add User Button-->
+            <div class="my-3">
+                <a href="/add"><button type="button" class="btn btn-primary">Add Produit</button></a>
+            </div>
+           
+
+
+            <table class="table border" >
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                        <th>Nom</th>
+                        <th>Quantité</th>
+                        <th>Disponible</th>
+                        <th>Date de création</th>
+                        <th>Date de modification</th>
+                        <th>Catégorie</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let produit of produits">
+                    <td>{{ produit.id }}</td>
+                        <td>{{ produit.nom }}</td>
+                        <td>{{ produit.qt }}</td>
+                        <td>{{ produit.disponible }}</td>
+                        <td>{{ produit.datecreation | date:'dd/MM/yyyy' }}</td>
+                        <td>{{ produit.datemodification | date:'dd/MM/yyyy' }}</td>
+
+                         <td></td>
+                    <td>
+                     
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</body>
+</html>
