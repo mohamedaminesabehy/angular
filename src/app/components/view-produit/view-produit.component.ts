@@ -2,8 +2,8 @@ import { Component, OnInit , Inject } from '@angular/core';
 import { Produit } from 'src/app/produit';
 import { CategoriesService } from 'src/app/app.service';
 import { Categories } from 'src/app/categories';
-import { saveAs } from  'file-saver/dist/FileSaver.min.js';
 import { Router } from '@angular/router';
+import * as saveAs from 'file-saver';
 
 
 
