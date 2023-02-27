@@ -48,11 +48,10 @@
                         <td>{{ produit.disponible }}</td>
                         <td>{{ produit.datecreation | date:'dd/MM/yyyy' }}</td>
                         <td>{{ produit.datemodification | date:'dd/MM/yyyy' }}</td>
-                        <td >  {{ produit.categorieid }}</td>               
+                        <td > {{ produit.categorieid }}</td>               
                   
                           
                           
-                         <td></td>
                     <td>
                         <div class="d-inline mx-2">
                             <button class="btn btn-warning"  type="button"(click)="updateProduit(produit.id)">Update</button>
